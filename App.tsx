@@ -22,6 +22,12 @@ import { SquadView } from "./components/SquadView";
 import { PersonaCard } from "./components/PersonaCard";
 import { FortuneTeller } from "./components/FortuneTeller";
 import { Confetti } from "./components/Confetti";
+import { ApiSetupGuide } from "./components/ApiSetupGuide";
+import { UserProfile as UserProfileModal } from "./components/UserProfile";
+import { AchievementQueue } from "./components/AchievementNotification";
+import { ProfileBadge } from "./components/BadgeSystem";
+import { getAllAchievements } from "./services/storageService";
+import { isApiConfigReady } from "./services/configService";
 import { t } from "./locales";
 
 function App() {
@@ -34,6 +40,9 @@ function App() {
   const [githubToken, setGithubToken] = useState("");
   const [showCopyToast, setShowCopyToast] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [showApiSetup, setShowApiSetup] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
+  const [newAchievements, setNewAchievements] = useState<any[]>([]);
 
   // --- Custom Hooks for Logic and State Management ---
   const appStateAndSetters = useAppState();
@@ -55,6 +64,12 @@ function App() {
   useEffect(() => {
     const savedToken = localStorage.getItem("gitaura_github_token");
     if (savedToken) setGithubToken(savedToken);
+
+    // Check API Setup
+    const configCheck = isApiConfigReady();
+    if (!configCheck.ready) {
+      setShowApiSetup(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -86,8 +101,19 @@ function App() {
         const timer = setTimeout(() => setShowConfetti(false), 5000);
         return () => clearTimeout(timer);
       }
+      checkNewAchievements();
     }
   }, [appState]);
+
+  const checkNewAchievements = () => {
+    const achievements = getAllAchievements();
+    const recentlyUnlocked = achievements.filter(
+      (a) => a.unlockedAt && Date.now() - a.unlockedAt < 5000,
+    );
+    if (recentlyUnlocked.length > 0) {
+      setNewAchievements(recentlyUnlocked);
+    }
+  };
 
   // --- UI Event Handlers ---
   const handleSaveToken = (token: string) => {
@@ -125,6 +151,24 @@ function App() {
   return (
     <div className="min-h-screen text-slate-200 selection:bg-primary/30 pb-20 font-sans relative">
       {showConfetti && <Confetti />}
+
+      {showApiSetup && (
+        <ApiSetupGuide
+          onComplete={() => setShowApiSetup(false)}
+          language={language === OutputLanguage.TR ? "Turkish" : "English"}
+        />
+      )}
+
+      {showProfile && (
+        <UserProfileModal
+          onClose={() => setShowProfile(false)}
+          language={language === OutputLanguage.TR ? "Turkish" : "English"}
+        />
+      )}
+
+      {newAchievements.length > 0 && (
+        <AchievementQueue achievements={newAchievements} />
+      )}
 
       {showCopyToast && (
         <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-[60] animate-fade-in-up">
@@ -185,6 +229,12 @@ function App() {
                 EN
               </button>
             </div>
+            <button
+              onClick={() => setShowProfile(true)}
+              className="hover:scale-110 transition-transform mr-2"
+            >
+              <ProfileBadge size="sm" />
+            </button>
             <button
               onClick={() => setIsPricingOpen(true)}
               className="hidden md:block text-xs font-bold tracking-widest uppercase hover:text-primary transition-colors"
@@ -441,7 +491,7 @@ function App() {
                             onClick={analysisHook.handleCreateIssue}
                             className="text-xs font-bold uppercase tracking-widest text-slate-500 hover:text-white transition-colors border-b border-transparent hover:border-white pb-0.5"
                           >
-                            {txt.results.createIssue || "Issue"}
+                            {txt.results.issue}
                           </button>
                         </div>
                       </div>

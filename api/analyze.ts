@@ -239,8 +239,8 @@ export default async function handler(
     return response.status(405).json({ message: "Method not allowed" });
   }
 
-  const { type, payload } = request.body;
-  const apiKey = process.env.GEMINI_API_KEY;
+  const { type, payload, apiKey: userApiKey } = request.body;
+  const apiKey = userApiKey || process.env.GEMINI_API_KEY;
 
   if (!apiKey) {
     return response

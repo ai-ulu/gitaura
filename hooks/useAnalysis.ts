@@ -11,6 +11,7 @@ import {
   analyzeRepoWithGemini,
   compareReposWithGemini,
 } from "../services/geminiService";
+import { saveAnalysis } from "../services/storageService";
 import { t } from "../locales";
 
 interface AppStateAndSetters {
@@ -135,6 +136,10 @@ ${appState.analysis.critique.map((c) => `- ${c}`).join("\n")}
           rateLimitRemaining: rateLimit,
         }));
         const analysis = await analyzeRepoWithGemini(repo, mode, language);
+
+        // Save analysis to storage
+        saveAnalysis("SINGLE", mode, repo, analysis);
+
         addToHistory(repo.owner, repo.name, analysis.score);
         setAppState((s: AppState) => ({
           ...s,
@@ -164,6 +169,17 @@ ${appState.analysis.critique.map((c) => `- ${c}`).join("\n")}
           res2.repo,
           language,
         );
+
+        // Save comparison to storage
+        saveAnalysis(
+          "VERSUS",
+          mode,
+          res1.repo,
+          { score: Math.max(comparison.repo1Score, comparison.repo2Score) } as any,
+          res2.repo,
+          comparison,
+        );
+
         setAppState((s: AppState) => ({
           ...s,
           status: "SUCCESS",
@@ -201,6 +217,21 @@ ${appState.analysis.critique.map((c) => `- ${c}`).join("\n")}
           repo: r.repo,
           analysis: analyses[i],
         }));
+
+        // Save squad analysis to storage
+        const bestResult = squadResults.reduce((prev, curr) =>
+          prev.analysis.score > curr.analysis.score ? prev : curr,
+        );
+        saveAnalysis(
+          "SQUAD",
+          mode,
+          bestResult.repo,
+          bestResult.analysis,
+          undefined,
+          undefined,
+          squadResults,
+        );
+
         squadResults.forEach((sr) =>
           addToHistory(sr.repo.owner, sr.repo.name, sr.analysis.score),
         );

@@ -19,14 +19,8 @@ const STORAGE_KEYS = {
  */
 export const loadApiConfig = (): ApiConfig => {
   return {
-    geminiApiKey: 
-      localStorage.getItem(STORAGE_KEYS.GEMINI_API_KEY) || 
-      import.meta.env.VITE_GEMINI_API_KEY || 
-      null,
-    githubToken: 
-      localStorage.getItem(STORAGE_KEYS.GITHUB_TOKEN) || 
-      import.meta.env.VITE_GITHUB_TOKEN || 
-      null,
+    geminiApiKey: localStorage.getItem(STORAGE_KEYS.GEMINI_API_KEY) || null,
+    githubToken: localStorage.getItem(STORAGE_KEYS.GITHUB_TOKEN) || null,
   };
 };
 
@@ -80,16 +74,14 @@ export const validateApiKey = (key: string | null): boolean => {
 /**
  * API yapılandırmasının hazır olup olmadığını kontrol et
  */
+/**
+ * API yapılandırmasının hazır olup olmadığını kontrol et
+ * Not: Backend proxy'de varsayılan anahtar olduğu için artık her zaman hazır kabul ediyoruz.
+ * Kullanıcı kendi anahtarını eklerse o kullanılır.
+ */
 export const isApiConfigReady = (): { ready: boolean; missing: string[] } => {
-  const config = loadApiConfig();
-  const missing: string[] = [];
-
-  if (!validateApiKey(config.geminiApiKey)) {
-    missing.push('Gemini API Key');
-  }
-
   return {
-    ready: missing.length === 0,
-    missing,
+    ready: true,
+    missing: [],
   };
 };

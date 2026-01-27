@@ -6,6 +6,7 @@ import {
   OutputLanguage,
   RepoInfo,
 } from "../types";
+import { loadApiConfig } from "./configService";
 
 /**
  * Analyzes a single repository by sending a request to our secure backend proxy.
@@ -21,6 +22,7 @@ export const analyzeRepoWithGemini = async (
   lang: OutputLanguage,
 ): Promise<AnalysisResult> => {
   try {
+    const { geminiApiKey } = loadApiConfig();
     const response = await fetch("/api/analyze", {
       method: "POST",
       headers: {
@@ -29,6 +31,7 @@ export const analyzeRepoWithGemini = async (
       body: JSON.stringify({
         type: "single",
         payload: { repo, mode, lang },
+        apiKey: geminiApiKey,
       }),
     });
 
@@ -62,6 +65,7 @@ export const compareReposWithGemini = async (
   lang: OutputLanguage,
 ): Promise<ComparisonResult> => {
   try {
+    const { geminiApiKey } = loadApiConfig();
     const response = await fetch("/api/analyze", {
       method: "POST",
       headers: {
@@ -70,6 +74,7 @@ export const compareReposWithGemini = async (
       body: JSON.stringify({
         type: "compare",
         payload: { repo1, repo2, lang },
+        apiKey: geminiApiKey,
       }),
     });
 

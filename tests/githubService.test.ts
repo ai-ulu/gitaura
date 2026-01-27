@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { parseGithubUrl } from './services/githubService';
+import { parseGithubUrl } from '../services/githubService';
 
 describe('githubService', () => {
   it('should parse valid github urls', () => {
