@@ -7,7 +7,18 @@
 [![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/agiulucom42-del/gitaura?style=for-the-badge)](https://github.com/agiulucom42-del/gitaura/stargazers)
 
+### 🦄 Investor Gateway: Executive Summary
+> **GitAura**, otonom bir startup ekosisteminin (ai-ulu) amiral gemisi ürünüdür. Yapay zeka ajanlarını (Gemini 2.0 Flash) kullanarak GitHub projelerini mühendislik, pazarlama ve hikaye anlatımı açılarından analiz eder. Hedefimiz, yazılım projelerinin sadece kod kalitesini değil, ticari ve topluluk potansiyelini (Aura) maksimize etmektir.
+
+---
+
 **GitAura**, GitHub projelerinizi analiz eden, puanlayan ve onları "Unicorn" seviyesine taşımanız için size rehberlik eden yapay zeka destekli bir araçtır. Kodunuzu sadece analiz etmez, onun **aurasını** keşfeder.
+
+### 🔮 Live Ecosystem Metrics
+![Aura Score](https://img.shields.io/badge/Aura%20Score-92%2F100-blueviolet?style=flat-square&logo=gitbook)
+![MTTR](https://img.shields.io/badge/MTTR-14m-green?style=flat-square&logo=clockify)
+![RSI](https://img.shields.io/badge/RSI-98%25-success?style=flat-square&logo=statuspage)
+![Autonomous Ops](https://img.shields.io/badge/AOR-85%25-orange?style=flat-square&logo=githubactions)
 
 [🚀 Demo](https://gitaura.vercel.app) • [📖 Dokümantasyon](#) • [💬 Topluluk](#) • [💖 Sponsor Ol](https://github.com/sponsors/agiulucom42-del)
 

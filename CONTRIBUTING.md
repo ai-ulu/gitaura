@@ -121,12 +121,16 @@ Sorularınız için:
 - Discussions bölümünde tartışma başlatın
 - Email: [email protected] (varsa)
 
-## 🙏 Davranış Kuralları
+## 🛡️ Davranış Kuralları ve Etik
 
-- Saygılı ve yapıcı olun
-- Farklı görüşlere açık olun
-- Yardımsever bir topluluk oluşturun
-- Spam ve taciz yasaktır
+GitAura topluluğunda hem insanlar hem de ajanlar için geçerli olan etik kurallara önem veriyoruz. Detaylar için [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) dosyasını inceleyin.
+
+## 🤖 Ajan-İnsan İş Birliği
+
+GitAura otonom bir ekosistemdir. Katkıda bulunurken şunları bilmelisiniz:
+- PR'larınız **Repair Agent** tarafından otomatik olarak test edilebilir.
+- Dokümantasyon önerileriniz **Documentation Agent** tarafından stil kontrolünden geçirilebilir.
+- Başarılarınız **Media Agent** tarafından topluluğa duyurulabilir.
 
 ## 📄 Lisans
 
