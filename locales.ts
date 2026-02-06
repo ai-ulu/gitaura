@@ -1,4 +1,3 @@
-
 import { OutputLanguage } from "./types";
 
 export const t = {
@@ -23,7 +22,8 @@ export const t = {
       badge: "✦ Yapay Zeka Kod Mentoru",
       titleStart: "Kodunun",
       titleEnd: "Ruhunu Keşfet",
-      subtitle: "GitHub reponuzu analiz edin, viral potansiyelini ölçün ve kodunuzu bir sanat eserine dönüştürün.",
+      subtitle:
+        "GitHub reponuzu analiz edin, viral potansiyelini ölçün ve kodunuzu bir sanat eserine dönüştürün.",
       shortcut: "ile analiz et",
       inputPlaceholder: "github.com/kullanici/proje",
       yourRepo: "Sizin Projeniz",
@@ -38,19 +38,20 @@ export const t = {
       modes: {
         single: "Tekli Keşif",
         versus: "Düello Modu",
-        squad: "Grup Aurası"
+        squad: "Grup Aurası",
       },
       analysisModes: {
         marketing: "Pazarlama Vizyonu",
         codeQuality: "Mühendislik",
-        documentation: "Hikaye Anlatımı"
+        documentation: "Hikaye Anlatımı",
+        security: "Güvenlik",
       },
       buttons: {
         analyze: "Aurayı Tara",
         compare: "Kıyasla",
         analyzeAll: "Grubu Analiz Et",
-        tokenError: "Token Girin"
-      }
+        tokenError: "Token Girin",
+      },
     },
     report: {
       title: "GitAura Analiz Raporu",
@@ -62,7 +63,7 @@ export const t = {
       metrics: "Aura Bileşenleri",
       critique: "Kritik Yüzleşme",
       tips: "Yükseliş Planı",
-      footer: "Bu rapor GitAura yapay zeka motoru tarafından oluşturulmuştur."
+      footer: "Bu rapor GitAura yapay zeka motoru tarafından oluşturulmuştur.",
     },
     loader: {
       working: "Aura Taranıyor...",
@@ -73,8 +74,8 @@ export const t = {
         "Stack Overflow referansları taranıyor...",
         "Commit geçmişindeki öfke seviyesi ölçülüyor...",
         "Unicorn enerjisi hesaplanıyor...",
-        "Rapor kristalize ediliyor..."
-      ]
+        "Rapor kristalize ediliyor...",
+      ],
     },
     results: {
       compare: "Bununla Kıyasla",
@@ -122,43 +123,44 @@ export const t = {
       radarViral: "Viral",
       radarCommunity: "Topluluk",
       radarMaint: "Bakım",
-      completeAnalysis: "Analizi Bitir"
+      completeAnalysis: "Analizi Bitir",
     },
     settings: {
-        title: "Sistem Ayarları",
-        tokenLabel: "GitHub Erişim Anahtarı",
-        tokenDesc: "API limitlerini kaldırmak için kişisel anahtarınızı girin. Anahtarınız sadece cihazınızda saklanır.",
-        tokenLink: "Anahtar oluştur."
+      title: "Sistem Ayarları",
+      tokenLabel: "GitHub Erişim Anahtarı",
+      tokenDesc:
+        "API limitlerini kaldırmak için kişisel anahtarınızı girin. Anahtarınız sadece cihazınızda saklanır.",
+      tokenLink: "Anahtar oluştur.",
     },
     pricing: {
-        title: "GitAura Potansiyelini Aç",
-        subtitle: "Projeniz için en uygun planı seçin.",
-        apprentice: "Başlangıç",
-        unicornHunter: "Unicorn Avcısı",
-        ctoMode: "CTO Modu",
-        currentPlan: "Mevcut",
-        startNow: "Başlat ⚡",
-        contact: "İletişim",
-        month: "/ay",
-        mostPopular: "Popüler",
-        noCC: "Kredi kartı gerekmez (Demo)",
-        features: {
-          basic: "Temel Analiz",
-          scorecard: "Aura Skoru",
-          history: "3 Geçmiş Kayıt",
-          unlimited: "Sınırsız Erişim",
-          social: "Sosyal Medya Motoru",
-          issue: "GitHub Entegrasyonu",
-          writer: "Metin Simyacısı",
-          allPro: "Tüm Pro Özellikleri",
-          private: "Gizli Repo Analizi",
-          api: "API Erişimi",
-          support: "Özel Destek"
-        },
-        lockedTitle: "Kilitli Özellik",
-        lockedDesc: "Bu özellik Aura Pro üyelerine özeldir.",
-        unlock: "Kilidi Aç"
-    }
+      title: "GitAura Potansiyelini Aç",
+      subtitle: "Projeniz için en uygun planı seçin.",
+      apprentice: "Başlangıç",
+      unicornHunter: "Unicorn Avcısı",
+      ctoMode: "CTO Modu",
+      currentPlan: "Mevcut",
+      startNow: "Başlat ⚡",
+      contact: "İletişim",
+      month: "/ay",
+      mostPopular: "Popüler",
+      noCC: "Kredi kartı gerekmez (Demo)",
+      features: {
+        basic: "Temel Analiz",
+        scorecard: "Aura Skoru",
+        history: "3 Geçmiş Kayıt",
+        unlimited: "Sınırsız Erişim",
+        social: "Sosyal Medya Motoru",
+        issue: "GitHub Entegrasyonu",
+        writer: "Metin Simyacısı",
+        allPro: "Tüm Pro Özellikleri",
+        private: "Gizli Repo Analizi",
+        api: "API Erişimi",
+        support: "Özel Destek",
+      },
+      lockedTitle: "Kilitli Özellik",
+      lockedDesc: "Bu özellik Aura Pro üyelerine özeldir.",
+      unlock: "Kilidi Aç",
+    },
   },
   [OutputLanguage.EN]: {
     common: {
@@ -181,7 +183,8 @@ export const t = {
       badge: "✦ AI Powered Code Mentor",
       titleStart: "Unlock",
       titleEnd: "Code Soul",
-      subtitle: "Analyze your GitHub repo, gauge virality, and transform your code into art.",
+      subtitle:
+        "Analyze your GitHub repo, gauge virality, and transform your code into art.",
       shortcut: "to analyze",
       inputPlaceholder: "github.com/username/project",
       yourRepo: "Your Project",
@@ -196,19 +199,20 @@ export const t = {
       modes: {
         single: "Single Scan",
         versus: "Duel Mode",
-        squad: "Squad Aura"
+        squad: "Squad Aura",
       },
       analysisModes: {
         marketing: "Marketing Vision",
         codeQuality: "Engineering",
-        documentation: "Storytelling"
+        documentation: "Storytelling",
+        security: "Security",
       },
       buttons: {
         analyze: "Scan Aura",
         compare: "Compare",
         analyzeAll: "Scan Squad",
-        tokenError: "Enter Token"
-      }
+        tokenError: "Enter Token",
+      },
     },
     report: {
       title: "GitAura Analysis Report",
@@ -220,7 +224,7 @@ export const t = {
       metrics: "Aura Components",
       critique: "Critical Confrontation",
       tips: "Ascension Plan",
-      footer: "Generated by GitAura AI engine."
+      footer: "Generated by GitAura AI engine.",
     },
     loader: {
       working: "Scanning Aura...",
@@ -231,8 +235,8 @@ export const t = {
         "Scanning for Stack Overflow references...",
         "Measuring aggression in commit history...",
         "Calculating Unicorn energy...",
-        "Crystallizing report..."
-      ]
+        "Crystallizing report...",
+      ],
     },
     results: {
       compare: "Compare This",
@@ -280,42 +284,43 @@ export const t = {
       radarViral: "Viral",
       radarCommunity: "Community",
       radarMaint: "Maint.",
-      completeAnalysis: "Finish Analysis"
+      completeAnalysis: "Finish Analysis",
     },
     settings: {
-        title: "System Settings",
-        tokenLabel: "GitHub Access Token",
-        tokenDesc: "Enter your personal token to remove API limits. Stored locally only.",
-        tokenLink: "Create Token."
+      title: "System Settings",
+      tokenLabel: "GitHub Access Token",
+      tokenDesc:
+        "Enter your personal token to remove API limits. Stored locally only.",
+      tokenLink: "Create Token.",
     },
     pricing: {
-        title: "Unlock GitAura Potential",
-        subtitle: "Choose the plan that fits your vision.",
-        apprentice: "Apprentice",
-        unicornHunter: "Unicorn Hunter",
-        ctoMode: "CTO Mode",
-        currentPlan: "Current",
-        startNow: "Initiate ⚡",
-        contact: "Contact",
-        month: "/mo",
-        mostPopular: "Popular",
-        noCC: "No credit card (Demo)",
-        features: {
-          basic: "Basic Scan",
-          scorecard: "Aura Score",
-          history: "3 Recent Items",
-          unlimited: "Unlimited Access",
-          social: "Social Engine",
-          issue: "GitHub Integration",
-          writer: "Text Alchemist",
-          allPro: "All Pro Features",
-          private: "Private Repos",
-          api: "API Access",
-          support: "Private Support"
-        },
-        lockedTitle: "Feature Locked",
-        lockedDesc: "Exclusive to Aura Pro members.",
-        unlock: "Unlock"
-    }
-  }
+      title: "Unlock GitAura Potential",
+      subtitle: "Choose the plan that fits your vision.",
+      apprentice: "Apprentice",
+      unicornHunter: "Unicorn Hunter",
+      ctoMode: "CTO Mode",
+      currentPlan: "Current",
+      startNow: "Initiate ⚡",
+      contact: "Contact",
+      month: "/mo",
+      mostPopular: "Popular",
+      noCC: "No credit card (Demo)",
+      features: {
+        basic: "Basic Scan",
+        scorecard: "Aura Score",
+        history: "3 Recent Items",
+        unlimited: "Unlimited Access",
+        social: "Social Engine",
+        issue: "GitHub Integration",
+        writer: "Text Alchemist",
+        allPro: "All Pro Features",
+        private: "Private Repos",
+        api: "API Access",
+        support: "Private Support",
+      },
+      lockedTitle: "Feature Locked",
+      lockedDesc: "Exclusive to Aura Pro members.",
+      unlock: "Unlock",
+    },
+  },
 };

@@ -1,16 +1,16 @@
-
 export enum AnalysisMode {
-  MARKETING = 'MARKETING',
-  CODE_QUALITY = 'CODE_QUALITY',
-  DOCUMENTATION = 'DOCUMENTATION'
+  MARKETING = "MARKETING",
+  CODE_QUALITY = "CODE_QUALITY",
+  DOCUMENTATION = "DOCUMENTATION",
+  SECURITY = "SECURITY",
 }
 
 export enum OutputLanguage {
-  TR = 'Turkish',
-  EN = 'English'
+  TR = "Turkish",
+  EN = "English",
 }
 
-export type AnalysisType = 'SINGLE' | 'VERSUS' | 'SQUAD';
+export type AnalysisType = "SINGLE" | "VERSUS" | "SQUAD";
 
 export interface RepoInfo {
   owner: string;
@@ -24,7 +24,7 @@ export interface RepoInfo {
 }
 
 export interface SocialPost {
-  platform: 'Twitter' | 'LinkedIn';
+  platform: "Twitter" | "LinkedIn";
   content: string;
   hashtags: string[];
 }
@@ -102,7 +102,7 @@ export interface HistoryItem {
 }
 
 export interface AppState {
-  status: 'IDLE' | 'FETCHING_REPO' | 'ANALYZING' | 'SUCCESS' | 'ERROR';
+  status: "IDLE" | "FETCHING_REPO" | "ANALYZING" | "SUCCESS" | "ERROR";
   error: string | null;
   analysisType: AnalysisType;
   repoInfo: RepoInfo | null; // For Single
